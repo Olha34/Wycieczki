@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-6">Odkryj dla siebie świat podróży</h1>
+
+</div>
+
+<ul>
+    @foreach (var wycieczki in Model)
+    {
+        <li>
+
+        <a asp-action="Details" asp-controller="Home" asp-route-id="@wycieczki.Id">@wycieczki.Country - @wycieczki.City</a>
+        <br>
+        <img src="@wycieczki.ImgUrl" />
+        </li>
+    }
+</ul>
